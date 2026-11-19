@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f6fb"><title>Everyday — Smartphone Usage Simulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#"><span class="brand-mark">e</span><span>everyday<span class="brand-light"> / usage lab</span></span></a><div class="top-right"><span class="live-dot"></span><span>LIVE SESSION</span><span class="top-divider"></span><span id="session-clock">00:00</span></div></header>
+  <main class="layout">
+    <section class="phone-column">
+      <div class="section-heading"><div><p class="eyebrow">INTERACTIVE SIMULATION</p><h1>Your phone</h1><p class="subheading">Explore the apps as you normally would.</p></div><span class="device-label"><span class="tiny-dot"></span> Virtual device</span></div>
+      <div class="phone-shell"><div class="phone-frame">
+        <div class="phone-screen">
+          <div class="statusbar"><span id="phone-time">9:41</span><span class="status-icons">● ◔ ▰</span></div>
+          <div id="phone-content" class="phone-content"></div>
+          <div class="phone-nav"><button id="home-button" class="home-pill" aria-label="Go to home screen"></button></div>
+        </div>
+      </div></div>
+      <div class="phone-hint"><span class="hint-icon">↗</span> Tap an app to open it · Use the on-screen keyboard to type</div>
+    </section>
+
+    <section class="dashboard-column">
+      <div class="section-heading dashboard-title"><div><p class="eyebrow">SESSION ANALYTICS</p><h1>Usage overview</h1><p class="subheading">Your activity, measured as it happens.</p></div><span class="live-badge"><span class="live-dot"></span> Tracking</span></div>
+      <div class="metric-grid">
+        <article class="metric-card"><div class="metric-label">TOTAL SESSION DURATION <span class="metric-icon">◷</span></div><div class="metric-value" id="metric-session">00:00</div><div class="metric-foot">Time since the page was opened</div></article>
+        <article class="metric-card"><div class="metric-label">AVERAGE APP SESSION <span class="metric-icon">▣</span></div><div class="metric-value" id="metric-average-session">—</div><div class="metric-foot">Across all app sessions</div></article>
+        <article class="metric-card"><div class="metric-label">SWITCH DURATION <span class="metric-icon">↔</span></div><div class="metric-value" id="metric-switch">—</div><div class="metric-foot" id="metric-switch-note">Average of valid switches (≤ 30 s)</div></article>
+        <article class="metric-card"><div class="metric-label">APP SESSIONS <span class="metric-icon">▤</span></div><div class="metric-value" id="metric-app-sessions">0</div><div class="metric-foot">Number of app openings</div></article>
+      </div>
+      <article class="panel"><div class="panel-head"><div><h2>Time per app</h2><p>Total time each simulated app was open</p></div><span class="panel-note">LIVE</span></div><div id="app-usage-list" class="app-usage-list"><div class="empty-state">Open an app to see usage here.</div></div></article>
+      <article class="panel category-panel"><div class="panel-head"><div><h2>App categories</h2><p>Absolute duration and relative share of app time</p></div><span class="panel-note">LIVE</span></div><div class="category-layout"><div class="donut-wrap"><div class="donut" id="category-donut"><div class="donut-center" aria-hidden="true"></div></div></div><div id="category-legend" class="legend"><div class="empty-state">Open an app to see category usage here.</div></div></div></article>
+      <article class="panel"><div class="panel-head"><div><h2>Keyboard metrics</h2><p>Measured from the simulated on-screen keyboard</p></div><span class="chart-unit">TYPING</span></div><div class="keyboard-metric-grid"><div><strong id="typing-speed">0</strong><span>Typing speed (CPM)</span></div><div><strong id="typing-duration">—</strong><span>Avg. keystroke duration</span></div><div><strong id="typing-interval">—</strong><span>Avg. inter-key interval</span></div><div><strong id="typing-backspace">0</strong><span>Backspace presses</span></div></div><div class="typing-note" id="typing-note">Start typing in a chat to measure keyboard activity.</div></article>
+      <div class="privacy-note"><span>♢</span><span><strong>Session-only tracking.</strong> No data is saved or sent anywhere. All measurements stay in memory and disappear when you end or reload this session. Session duration continues while this tab is in the background.</span></div>
+      <button id="end-session" class="end-button"><span>↻</span> End session &amp; reset data</button>
+    </section>
+  </main>
+  <footer>EVERYDAY USAGE LAB <span>·</span> SIMULATED SMARTPHONE ENVIRONMENT</footer>
+  <script src="js/tracking.js"></script><script src="js/apps.js"></script><script src="js/main.js"></script>
+</body></html>
